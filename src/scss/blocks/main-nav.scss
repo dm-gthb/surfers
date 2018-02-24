@@ -1,0 +1,33 @@
+.main-nav {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+
+  &__list {
+    list-style: none;
+    font-size: 0;
+  }
+
+  &__item {
+    display: inline-block;
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 5px 10px;
+    vertical-align: top;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $text-black;
+    transition: all .2s;
+
+    &:hover {
+      color: #fff;
+      background-color: $blue;
+    }
+  }
+}

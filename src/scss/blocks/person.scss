@@ -1,0 +1,101 @@
+.person {
+  width: 100%;
+  max-width: 265px;
+  text-align: center;
+  background: #ffffff;
+  box-shadow: 10px 17px 50px 0px rgba(0, 0, 0, 0.2);
+  transition: background .25s;
+
+  &:hover {
+    background: $blue;
+    box-shadow: 10px 17.321px 50px 0px rgba(0, 0, 0, 0.4);
+
+    .person__img {
+      border: 2px solid #ffffff;
+    }
+
+    .person__username::after {
+      transition: all .4s;
+      background-color: $blue--dark;
+      background-image:
+        linear-gradient(45deg, $blue 25%, transparent 25%),
+        linear-gradient(315deg, $blue 25%, transparent 25%),
+        linear-gradient(135deg, $blue 25%, transparent 25%),
+        linear-gradient(225deg, $blue 25%, transparent 25%);
+    }
+
+    .person__name,
+    .person__location,
+    .person__username {
+      color: #ffffff;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 30px 10px;
+    text-decoration: none;
+  }
+
+  &__img {
+    display: block;
+    width: 50%;
+    max-width: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: border-color .25s;
+  }
+
+  &__name {
+    margin: 0;
+    margin-bottom: 2px;
+    font-family: $font-family--montserrat;
+    font-size: 18px;
+    color: $blue;
+  }
+
+  &__username {
+    display: block;
+    font-family: $font-family--raleway;
+    font-size: 14px;
+    color: $text-gray--middle-light;
+    padding-bottom: 22px;
+    margin-bottom: 15px;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 32px;
+      height: 8px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+      transition: all .4s;
+
+      background-image:
+        linear-gradient(45deg, white 25%, transparent 25%),
+        linear-gradient(315deg, white 25%, transparent 25%),
+        linear-gradient(135deg, white 25%, transparent 25%),
+        linear-gradient(225deg, white 25%, transparent 25%);
+      background-position:
+        4px 0px,
+        4px 0px,
+        0 0,
+        0 0;
+      background-size: 8px 8px;
+      background-repeat: repeat-x;
+      background-color: #646464;
+    }
+  }
+
+  &__location {
+    display: block;
+    font-family: $font-family--raleway;
+    font-size: 14px;
+    color: $text-gray--middle-light;
+  }
+}
+
+

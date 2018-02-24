@@ -1,0 +1,187 @@
+.about {
+  border: 1px solid red;
+  background: url(../../img/bg-about@2x.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  min-height: 640px;
+  position: relative;
+
+  &__container {
+    @include container();
+  }
+
+  &__title {
+    margin: 0;
+    transform: translateY(-85%);
+  }
+
+  &__inner {
+    display: flex;
+
+  }
+
+  &__description {
+    width: 50%;
+    position: absolute;
+    width: 50%;
+    background: #fff;
+    padding-top: 70px;
+    padding-bottom: 275px;
+    padding-left: 60px;
+    padding-right: 20px;
+    margin-left: -20px;
+    border: 1px solid gray;
+    text-align: left;
+
+    @media screen and (min-width: $screen-md-min) {
+      text-align: center;
+      margin-left: 0;
+      padding-top: 100px;
+      padding-bottom: 275px;
+      padding-right: 100px;
+      position: absolute;
+      width: 50%;
+      left: 0;
+      top: 45%;
+    }
+
+    @media screen and (min-width: 1170px) {
+      padding-left: calc((100vw - 1170px + 100px) / 2);
+    }
+  }
+
+  &__description-title {
+    display: inline-block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: $text-black;
+    padding-bottom: 32px;
+    margin: 0;
+    margin-bottom: 30px;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 13px;
+      height: 13px;
+      position: absolute;
+      bottom: 0;
+      left: calc(50%);
+      transform: translate(-50%);
+      background-image: url('../../img/x-icon.svg');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+
+  &__description-text {
+    font-size: 22px;
+    font-family: $font-family--playfair;
+    font-style: italic;
+    line-height: 1.73;
+    color: $text-black;
+    text-align: left;
+    margin: 0;
+    margin-bottom: 25px;
+    max-width: 370px;
+  }
+
+  &__link {
+    text-align: left;
+  }
+
+  &__video {
+    width: calc(50% - 60px - 30px);
+    margin-left: calc(50% + 60px);
+
+    background-image: url("../../img/bg-video@2x.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    // border: 1px solid red;
+
+    @media screen and (min-width: $screen-md-min) {
+      transform: translateY(calc(560px - 140px));
+    }
+  }
+
+  &__video-overlay-picture {
+    background-image: url("../../img/bg-video@2x.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding-bottom: 56.25%;
+  }
+
+  &__video-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../img/circle-play.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+// <section class="about">
+//     <!-- <h2 class="about__title">About us</h2> -->
+//     <!-- <img src="img/about-us@2x.png" class="about__title-img" alt=""> -->
+//     <div class="about__container">
+//       <h2 class="about__title">
+//         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 423.56 50.061"><g letter-spacing="0" word-spacing="0" stroke-width=".265"><text y="133.698" x="3.475" style="line-height:1.25" font-weight="400" font-size="10.583" font-family="sans-serif" transform="translate(-93.19 -90.08)"/><text y="106.971" x="74.835" style="line-height:1.25" font-weight="400" font-size="10.583" font-family="sans-serif" transform="translate(-93.19 -90.08)"/><text y="144.656" x="79.112" style="line-height:1.25" font-weight="400" font-size="10.583" font-family="sans-serif" transform="translate(-93.19 -90.08)"/><g style="line-height:1.25" aria-label="ABOUT US" font-weight="700" font-size="69.144" font-family="Montserrat" fill-opacity=".031"><path style="-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start" d="M38.237 38.86H15.765l-4.287 10.37H0L21.573.83h11.063l21.642 48.4H42.524zm-3.526-8.506l-7.676-18.53-7.675 18.53zM102.324 24.062q4.148 1.314 6.5 4.426 2.35 3.042 2.35 7.536 0 6.362-4.978 9.819-4.91 3.388-14.382 3.388h-25.03V.83H90.43q8.85 0 13.552 3.388 4.771 3.388 4.771 9.196 0 3.526-1.728 6.292-1.66 2.766-4.702 4.356zM77.916 9.265v11.41h11.132q4.149 0 6.292-1.453 2.144-1.452 2.144-4.287t-2.144-4.218q-2.143-1.452-6.292-1.452zm13.068 31.53q4.425 0 6.638-1.452 2.282-1.452 2.282-4.494 0-6.016-8.92-6.016H77.916v11.962zM150.646 50.06q-7.537 0-13.622-3.25-6.015-3.249-9.472-8.919-3.389-5.739-3.389-12.86 0-7.123 3.389-12.792 3.457-5.74 9.472-8.99Q143.11 0 150.646 0t13.552 3.25q6.016 3.25 9.473 8.989 3.457 5.67 3.457 12.791 0 7.122-3.457 12.861-3.457 5.67-9.473 8.92-6.015 3.25-13.552 3.25zm0-9.541q4.287 0 7.744-1.936 3.457-2.006 5.393-5.532 2.005-3.526 2.005-8.02 0-4.495-2.005-8.021-1.936-3.527-5.393-5.463-3.457-2.005-7.744-2.005t-7.744 2.005q-3.458 1.936-5.463 5.463-1.936 3.526-1.936 8.02 0 4.495 1.936 8.021 2.005 3.526 5.463 5.532 3.457 1.936 7.744 1.936zM215.068 50.06q-10.371 0-16.18-5.738-5.738-5.74-5.738-16.388V.83h11.201v26.69q0 12.999 10.787 12.999 5.255 0 8.02-3.112 2.766-3.18 2.766-9.888V.83h11.063v27.105q0 10.649-5.808 16.388-5.739 5.739-16.11 5.739zM265.498 9.957H250.01V.83h42.178v9.127H276.7V49.23h-11.202zM346.717 50.06q-10.372 0-16.18-5.738-5.739-5.74-5.739-16.388V.83h11.201v26.69q0 12.999 10.787 12.999 5.255 0 8.02-3.112 2.766-3.18 2.766-9.888V.83h11.064v27.105q0 10.649-5.809 16.388-5.739 5.739-16.11 5.739zM403.024 50.06q-5.74 0-11.132-1.52-5.324-1.59-8.574-4.08l3.803-8.436q3.111 2.282 7.398 3.665 4.287 1.383 8.574 1.383 4.771 0 7.053-1.383 2.282-1.452 2.282-3.803 0-1.729-1.383-2.835-1.314-1.175-3.458-1.867-2.074-.691-5.67-1.521-5.531-1.314-9.057-2.628-3.527-1.313-6.085-4.217-2.49-2.904-2.49-7.745 0-4.217 2.283-7.605 2.281-3.458 6.845-5.463Q398.045 0 404.683 0q4.633 0 9.058 1.106 4.426 1.107 7.744 3.181l-3.457 8.505q-6.707-3.803-13.414-3.803-4.702 0-6.983 1.521-2.213 1.521-2.213 4.01 0 2.49 2.558 3.734 2.628 1.176 7.952 2.351 5.532 1.314 9.058 2.628 3.526 1.313 6.015 4.148 2.559 2.835 2.559 7.675 0 4.149-2.351 7.606-2.282 3.388-6.915 5.393-4.632 2.006-11.27 2.006z"/></g></g></svg>
+//       </h2>
+
+//       <div class="about__inner">
+//         <!-- <div class="about__description">
+//           <h3 class="about__description-title">We are Surfers co.</h3>
+//           <p class="about__description-text">Lorem ipsum dolor sit amet, aeneam consectetur adipiscing elit. Fusce iaculis feugiat arcunum fermentum hendrerit. Suspendisse auctor labor nisi, et interdum diam facilisis, aliquam pulvinar semi egetis belle sollicitudin ut. Nullam tincidun finibustus scelerisque.</p>
+//           <div class="about__link">
+//             <a href="#" class="btn btn--more">Read more</a>
+//           </div>
+//         </div> -->
+
+//         <div class="about__video">
+//           <div class="about__video-overlay-picture">
+//             <a href="#" class="about__video-link"></a>
+//           </div>
+//         </div>
+
+
+//       </div>  <!-- about__inner -->
+//     </div>
+//   </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

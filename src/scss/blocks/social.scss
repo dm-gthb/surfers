@@ -1,0 +1,29 @@
+.social {
+  display: flex;
+  align-items: center;
+
+  &__link {
+    display: inline-block;
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    svg {
+      vertical-align: middle;
+    }
+
+    &:hover {
+      .social__icon-wrapper {
+        transition: all .3s;
+        fill: #fff;
+      }
+
+      .social__icon-letter {
+        transition: all .3s;
+        fill: #000;
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.posts {
+  margin-bottom: 80px;
+
+  @media screen and (min-width: $screen-lg-min) {
+    margin-bottom: 180px;
+  }
+
+  &__container {
+    @include container();
+  }
+
+  &__title {
+    @include description-title();
+    margin-bottom: 20px;
+
+    @media screen and (min-width: $screen-md-min) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    @media screen and (min-width: $screen-md-min) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__list-item {
+    width: 100%;
+
+    @media screen and (min-width: $screen-md-min) {
+      max-width: 33%;
+      flex: 1 1 33%;
+      padding: 0 15px;
+    }
+
+    @media screen and (min-width: $screen-lg-min) {
+      max-width: 25%;
+      flex: 1 1 25%;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    text-align: center;
+  }
+}

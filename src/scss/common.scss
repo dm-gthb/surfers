@@ -1,0 +1,14 @@
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  min-width: 320px;
+  font-family: $font-family--montserrat;
+}

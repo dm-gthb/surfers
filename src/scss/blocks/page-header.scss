@@ -1,0 +1,57 @@
+.page-header {
+  padding-top: 32px;
+  padding-bottom: 40px;
+  background: url(../../img/bg-header.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  border: 1px solid green;
+
+  @media screen and (min-width: $screen-md-min) {
+    padding-bottom: 390px;
+  }
+
+  &__container {
+    @include container();
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+
+    @media screen and (min-width: $screen-md-min) {
+      margin-bottom: 130px;
+    }
+  }
+
+  &__logo {
+    margin: 0;
+    margin-right: 15px;
+  }
+
+  &__social {
+    margin-left: 15px;
+  }
+
+  &__promo {
+    text-align: center;
+    font-family: $font-family--playfair;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  &__promo-title {
+    margin: 0;
+    margin-bottom: 8px;
+    font-size: 50px;
+    color: $text-black;
+  }
+
+  &__promo-text {
+    margin: 0;
+    font-size: 24px;
+    color: #fff;
+    text-shadow: 0px 3px 15px rgba(0, 0, 0, 0.64);
+  }
+}

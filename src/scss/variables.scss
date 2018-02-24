@@ -11,9 +11,11 @@ $screen-lg-min: 992px;
 $screen-xlg-min: 1200px;
 
 // COLORS
+$gray: #d9d9d9;
+$blue--light: #00c2ff;
 $blue: #00b0ff;
 $blue--dark: #0022ff;
-$yellow: ##f2d800;
+$yellow: #f2d800;
 $black: #000000;
 
 // TEXT
@@ -21,16 +23,16 @@ $text-gray--lightest: #f7f7f7;
 $text-gray--light: #a0a0a0;
 $text-gray--middle-light: #8c8c8c;
 $text-gray: #787878;
+$text-gray--dark: #4d4d4d;
 $text-black: #000000;
 
 $font-family--raleway: 'Raleway', Arial, Helvetica, sans-serif;
-$font-family--playfair: 'Playfair Display', Georgia, serif;
 $font-family--montserrat: 'Montserrat', Arial, Helvetica, sans-serif;
+$font-family--playfair: 'Playfair Display', Georgia, serif;
+$font-family--roboto: 'Roboto', Arial, Helvetica, sans-serif;
 
 // Raleway
 // Raleway Bold
-
 // PlayfairDisplay Italic
-
 // Montserrat Regular
 // Montserrat Bold
