@@ -2,15 +2,25 @@
 
 var gulp         = require('gulp'),
     sass         = require('gulp-sass'),
+    sourcemaps   = require('gulp-sourcemaps'),
+    postcss      = require('gulp-postcss'),
+    autoprefixer = require('autoprefixer'),
+    mqpacker     = require('css-mqpacker'),
     imagemin     = require('gulp-imagemin'),
     del          = require('del'),
-    browserSync  = require('browser-sync'),
-    autoprefixer = require('gulp-autoprefixer');
+    browserSync  = require('browser-sync');
 
 gulp.task('sass', function(){
   return gulp.src('src/scss/style.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass())
-    .pipe(autoprefixer({ browsers: ['last 2 version'] }))
+    .pipe(postcss([
+      autoprefixer(),
+      mqpacker({
+        sort: true
+      })
+    ]))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('src/css/'))
     .pipe(browserSync.stream());
 });
