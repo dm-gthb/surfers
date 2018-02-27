@@ -26,3 +26,21 @@ document.addEventListener('DOMContentLoaded', () => {
 // то
 
 // устанавливаем для about фиксированную высоту (например 640) и увечиваем margin-bottom
+
+
+
+
+// document.addEventListener("DOMContentLoaded", function() {
+//   var boardsScriptInner = document.getElementById("boards-template").innerHTML;
+//   var compileBoardListTemplate = Handlebars.compile(boardsScriptInner);
+
+//   $.ajax("./data/boards.json").done(function(data){
+//     $('.board').html(compileBoardListTemplate(data));
+//     console.log(compileBoardListTemplate(data));
+//   });
+// })
+
+
+
+
+

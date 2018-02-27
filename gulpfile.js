@@ -8,7 +8,12 @@ var gulp         = require('gulp'),
     mqpacker     = require('css-mqpacker'),
     imagemin     = require('gulp-imagemin'),
     del          = require('del'),
-    browserSync  = require('browser-sync');
+    browserSync  = require('browser-sync'),
+    handlebars   = require('gulp-compile-handlebars'),
+    fs           = require("fs"),
+    yaml         = require("js-yaml"),
+    path         = require("path"),
+    rename       = require("gulp-rename");
 
 gulp.task('sass', function(){
   return gulp.src('src/scss/style.scss')
@@ -25,6 +30,29 @@ gulp.task('sass', function(){
     .pipe(browserSync.stream());
 });
 
+gulp.task('templates', function() {
+  var templateData = yaml.safeLoad(fs.readFileSync("data.yml", "utf-8"));
+  var options = {
+    ignorePartials: true, //ignores the unknown footer2 partial in the handlebars template, defaults to false
+    batch: ["./src/patrials/"],
+    helpers: {
+      capitals: function(str) {
+        return str.toUpperCase()
+      }
+    }
+  };
+
+  return gulp
+    .src("src/pages/*.hbs")
+    .pipe(handlebars(templateData, options))
+    .pipe(
+      rename(function(path) {
+        path.extname = ".html";
+      })
+    )
+    .pipe(gulp.dest("src"));
+});
+
 gulp.task('browser-sync', function() {
     browserSync({
         server: {
@@ -34,10 +62,13 @@ gulp.task('browser-sync', function() {
     });
 });
 
-gulp.task('watch', ['browser-sync', 'sass'], function() {
+gulp.task('watch', ['browser-sync', 'templates', 'sass'], function() {
     gulp.watch('src/scss/**/*.scss', ['sass']);
     gulp.watch('src/js/**/*.js', browserSync.reload);
     gulp.watch('src/**/*.html', browserSync.reload);
+    gulp.watch('src/templates/*.hbs', ['templates']);
+    gulp.watch('src/patrials/*.hbs', ['templates']);
+    gulp.watch('data.yml', ['templates']);
 });
 
 
