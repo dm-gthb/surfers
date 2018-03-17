@@ -8,12 +8,13 @@ var gulp         = require('gulp'),
     mqpacker     = require('css-mqpacker'),
     imagemin     = require('gulp-imagemin'),
     del          = require('del'),
-    browserSync  = require('browser-sync'),
+    browserSync  = require('browser-sync').create(),
     handlebars   = require('gulp-compile-handlebars'),
     fs           = require("fs"),
     yaml         = require("js-yaml"),
     path         = require("path"),
-    rename       = require("gulp-rename");
+    rename       = require("gulp-rename"),
+    runSequence  = require('run-sequence');
 
 gulp.task('sass', function(){
   return gulp.src('src/scss/style.scss')
@@ -26,15 +27,14 @@ gulp.task('sass', function(){
       })
     ]))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('src/css/'))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('templates', function() {
   var templateData = yaml.safeLoad(fs.readFileSync("data.yml", "utf-8"));
   var options = {
-    ignorePartials: true, //ignores the unknown footer2 partial in the handlebars template, defaults to false
-    batch: ["./src/patrials/"],
+    ignorePartials: true,
+    batch: ["./src/templates/patrials"],
     helpers: {
       capitals: function(str) {
         return str.toUpperCase()
@@ -43,34 +43,15 @@ gulp.task('templates', function() {
   };
 
   return gulp
-    .src("src/pages/*.hbs")
+    .src("src/templates/*.hbs")
     .pipe(handlebars(templateData, options))
     .pipe(
       rename(function(path) {
         path.extname = ".html";
       })
     )
-    .pipe(gulp.dest("src"));
+    .pipe(gulp.dest("dist"));
 });
-
-gulp.task('browser-sync', function() {
-    browserSync({
-        server: {
-            baseDir: 'src'
-        },
-        notify: false
-    });
-});
-
-gulp.task('watch', ['browser-sync', 'templates', 'sass'], function() {
-    gulp.watch('src/scss/**/*.scss', ['sass']);
-    gulp.watch('src/js/**/*.js', browserSync.reload);
-    gulp.watch('src/**/*.html', browserSync.reload);
-    gulp.watch('src/templates/*.hbs', ['templates']);
-    gulp.watch('src/patrials/*.hbs', ['templates']);
-    gulp.watch('data.yml', ['templates']);
-});
-
 
 gulp.task('img', function() {
   return gulp.src('src/img/*')
@@ -78,24 +59,39 @@ gulp.task('img', function() {
   .pipe(gulp.dest('dist/img'));
 });
 
-
-gulp.task('clean', function() {
-  return del.sync('dist');
+gulp.task('copy:fonts', function() {
+  return gulp.src('src/fonts/**/*')
+  .pipe(gulp.dest('dist/fonts'));
 });
 
-gulp.task('default', ['watch']);
+gulp.task('clean', function() {
+  return del('dist');
+});
 
+gulp.task('build', function (cb) {
+  runSequence('clean',
+    ['templates', 'sass', 'copy:fonts', 'img'],
+    cb);
+});
 
-gulp.task('build', ['clean', 'img', 'sass'], function() {
-  var buildCss = gulp.src('src/css/style.css')
-  .pipe(gulp.dest('dist/css'))
+gulp.task('watch', function() {
+  gulp.watch('src/scss/**/*.scss', ['sass']);
+  gulp.watch('src/templates/**/*.hbs', ['templates']);
+  gulp.watch('data.yml', ['templates']);
+  gulp.watch('src/img/*', ['img']);
+  gulp.watch('src/fonts/**/*', ['copy:fonts']);
+});
 
-  var buildFonts = gulp.src('src/fonts/**/*')
-  .pipe(gulp.dest('dist/fonts'))
+gulp.task('serve', function() {
+  browserSync.init({
+    server: 'dist'
+  });
 
-  var buildJs = gulp.src('src/js/**/*')
-  .pipe(gulp.dest('dist/js'))
+  browserSync.watch('dist/**/*.*').on('change', browserSync.reload);
+});
 
-  var buildHtml = gulp.src('src/*.html')
-  .pipe(gulp.dest('dist'));
+gulp.task('default', function(cb) {
+  runSequence('build',
+    ['watch', 'serve'],
+    cb);
 });

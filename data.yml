@@ -1,0 +1,30 @@
+teamMembers: [
+  {
+    link: "#",
+    img: "img/tim--taj2x.jpg",
+    name: "Taj Burrow",
+    username: "@tajamo",
+    location: "Yallingup, Australia"
+  },
+  {
+    link: "#",
+    img: "img/tim--taj2x.jpg",
+    name: "Malia Manuel",
+    username: "@maliamanuel",
+    location: "Wailua, Hi"
+  },
+  {
+    link: "#",
+    img: "img/tim--taj2x.jpg",
+    name: "Ian Walsh",
+    username: "@ian.walsh",
+    location: "Maui, Hi"
+  },
+  {
+    link: "#",
+    img: "img/tim--taj2x.jpg",
+    name: "Macy Callaghan",
+    username: "@macyjanecallaghan",
+    location: "San Clemente, CA"
+  }
+]
