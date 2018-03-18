@@ -10,11 +10,15 @@ var gulp         = require('gulp'),
     del          = require('del'),
     browserSync  = require('browser-sync').create(),
     handlebars   = require('gulp-compile-handlebars'),
-    fs           = require("fs"),
-    yaml         = require("js-yaml"),
-    path         = require("path"),
-    rename       = require("gulp-rename"),
-    runSequence  = require('run-sequence');
+    fs           = require('fs'),
+    yaml         = require('js-yaml'),
+    path         = require('path'),
+    rename       = require('gulp-rename'),
+    runSequence  = require('run-sequence'),
+    webpack = require('webpack'),
+    webpackConfig = require('./webpack.config.js'),
+    gutil = require("gulp-util");
+
 
 gulp.task('sass', function(){
   return gulp.src('src/scss/style.scss')
@@ -31,10 +35,10 @@ gulp.task('sass', function(){
 });
 
 gulp.task('templates', function() {
-  var templateData = yaml.safeLoad(fs.readFileSync("data.yml", "utf-8"));
+  var templateData = yaml.safeLoad(fs.readFileSync('data.yml', 'utf-8'));
   var options = {
     ignorePartials: true,
-    batch: ["./src/templates/patrials"],
+    batch: ['./src/templates/patrials'],
     helpers: {
       capitals: function(str) {
         return str.toUpperCase()
@@ -43,14 +47,14 @@ gulp.task('templates', function() {
   };
 
   return gulp
-    .src("src/templates/*.hbs")
+    .src('src/templates/*.hbs')
     .pipe(handlebars(templateData, options))
     .pipe(
       rename(function(path) {
-        path.extname = ".html";
+        path.extname = '.html';
       })
     )
-    .pipe(gulp.dest("dist"));
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('img', function() {
@@ -68,9 +72,27 @@ gulp.task('clean', function() {
   return del('dist');
 });
 
+gulp.task('webpack', function() {
+  webpack(webpackConfig, function(err, stats) {
+    if (err) throw new gutil.PluginError('webpack', err);
+    gutil.log(
+      '[webpack] Completed\n' +
+        stats.toString({
+          assets: true,
+          chunks: false,
+          chunkModules: false,
+          colors: true,
+          hash: false,
+          timings: false,
+          version: false
+        })
+    );
+  });
+});
+
 gulp.task('build', function (cb) {
   runSequence('clean',
-    ['templates', 'sass', 'copy:fonts', 'img'],
+    ['templates', 'sass', 'webpack', 'copy:fonts', 'img'],
     cb);
 });
 
@@ -95,3 +117,4 @@ gulp.task('default', function(cb) {
     ['watch', 'serve'],
     cb);
 });
+
