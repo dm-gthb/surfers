@@ -102,6 +102,7 @@ gulp.task('watch', function() {
   gulp.watch('data.yml', ['templates']);
   gulp.watch('src/img/*', ['img']);
   gulp.watch('src/fonts/**/*', ['copy:fonts']);
+  gulp.watch('src/js/**/*.js', ['webpack']);
 });
 
 gulp.task('serve', function() {
