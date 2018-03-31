@@ -159,8 +159,6 @@
 
   &__rating {
     margin-bottom: 18px;
-    display: flex;
-    align-items: flex-start;
 
     @media screen and (min-width: $screen-md-min) {
       margin-bottom: 25px;
@@ -169,20 +167,6 @@
     @media screen and (min-width: $screen-lg-min) {
       margin-bottom: 35px;
     }
-
-    svg {
-      margin-right: 4px;
-      width: 14px;
-      height: 14px;
-      fill: #F2D800;
-    }
-  }
-
-  &__rating-num {
-    margin-left: 4px;
-    font-weight: bold;
-    font-size: 12px;
-    color: $text-gray;
   }
 
   &__nav {
@@ -240,7 +224,8 @@
     }
   }
 
-  &__description {
+  &__description-text {
+    display: none;
     margin: 0;
     margin-bottom: 30px;
     font-family: $font-family--raleway;
@@ -251,6 +236,10 @@
 
     @media screen and (min-width: $screen-md-min) {
       margin-bottom: 60px;
+    }
+
+    &--active {
+      display: block;
     }
   }
 

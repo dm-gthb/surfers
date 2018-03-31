@@ -2,56 +2,28 @@
   <div class="board__illustration">
 
     <div class="board__img-container-to-show">
+      {{#each img}}
       <div class="board__img-shown-wrapper">
-        <img src="img/board@2x.png" alt="" class="board__img-shown">
+        <img src="img/{{this}}" alt="" class="board__img-shown">
       </div>
-
-      <div class="board__img-shown-wrapper">
-        <img src="img/board--2.png" alt="" class="board__img-shown">
-      </div>
-
-      <div class="board__img-shown-wrapper">
-        <img src="img/board--3.png" alt="" class="board__img-shown">
-      </div>
-
-      <div class="board__img-shown-wrapper">
-        <img src="img/board--4.png" alt="" class="board__img-shown">
-      </div>
+      {{/each}}
     </div>
 
     <ul class="board__images-preview">
-      <li class="board__images-preview-item">
-        <button class="board__images-preview-btn board__images-preview-btn--active">
-          <img src="img/board@2x.png" alt="" class="board__images-preview-item-img">
-        </button>
-      </li>
+      {{#each img}}
       <li class="board__images-preview-item">
         <button class="board__images-preview-btn">
-          <img src="img/board--2.png" alt="" class="board__images-preview-item-img">
+          <img src="img/{{this}}" alt="" class="board__images-preview-item-img">
         </button>
       </li>
-      <li class="board__images-preview-item">
-        <button class="board__images-preview-btn">
-          <img src="img/board--3.png" alt="" class="board__images-preview-item-img">
-        </button>
-      </li>
-      <li class="board__images-preview-item">
-        <button class="board__images-preview-btn">
-          <img src="img/board--4.png" alt="" class="board__images-preview-item-img">
-        </button>
-      </li>
+      {{/each}}
     </ul>
   </div>
 
   <div class="board__full-description">
-    <h3 class="board__title">JR Surfboards The Donny Stoker Yellow/Green Rail Fade</h3>
+    <h3 class="board__title">{{title}}</h3>
     <div class="board__rating">
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><path fill-rule="evenodd" d="M6.583.819L8.37 5.782h4.798L9.253 8.696l1.4 5.117-4.07-3.068-4.069 3.068 1.4-5.117-3.915-2.914h4.798L6.583.819z"/></svg>
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><path fill-rule="evenodd" d="M6.583.819L8.37 5.782h4.798L9.253 8.696l1.4 5.117-4.07-3.068-4.069 3.068 1.4-5.117-3.915-2.914h4.798L6.583.819z"/></svg>
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><path fill-rule="evenodd" d="M6.583.819L8.37 5.782h4.798L9.253 8.696l1.4 5.117-4.07-3.068-4.069 3.068 1.4-5.117-3.915-2.914h4.798L6.583.819z"/></svg>
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><path fill-rule="evenodd" d="M6.583.819L8.37 5.782h4.798L9.253 8.696l1.4 5.117-4.07-3.068-4.069 3.068 1.4-5.117-3.915-2.914h4.798L6.583.819z"/></svg>
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><path fill-rule="evenodd" d="M6.583.819L8.37 5.782h4.798L9.253 8.696l1.4 5.117-4.07-3.068-4.069 3.068 1.4-5.117-3.915-2.914h4.798L6.583.819z"/></svg>
-      <span class="board__rating-num">(52)</span>
+      {{> rating}}
     </div>
     <div class="board__nav">
       <ul class="board__nav-list">
@@ -60,11 +32,11 @@
         <li class="board__nav-item"><button class="board__nav-link">Dimensions</button></li>
       </ul>
     </div>
-    <p class="board__description">Easy to ride, care free surfing craft that's fun for everyone, paddles well, super fast down the line and great for any level of surfing depending on who rides it. The Donny Stoker, a rework on design from stokesys first ever pro model. A super easy to surf and fun board. The Donny Stoker is a board for total freesurfing expression.</p>
-    <!-- <p class="board__features">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem recusandae, omnis commodi officia? Tempore ipsa, qui consequatur vel modi esse ipsam minus quos amet officiis optio eligendi fuga voluptatem alias!</p> -->
-    <!-- <p class="board__dimensions">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel veniam doloremque dicta deserunt maiores labore. Illo voluptatum, numquam aspernatur tempore in dolores, quidem iusto quos, nulla expedita sapiente. Consectetur, odit!</p> -->
+    <p class="board__description-text board__description-text--active">{{description}}</p>
+    <p class="board__description-text">{{features}}</p>
+    <p class="board__description-text">{{dimensions}}</p>
     <div class="board__to-buy">
-      <span class="board__price">$499.99</span>
+      <span class="board__price">{{price}}</span>
       <button class="btn btn--rect-blue">Buy now</button>
     </div>
     <a href="#" class="btn btn--more">View all boards</a>

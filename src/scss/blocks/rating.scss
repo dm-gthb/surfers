@@ -1,0 +1,22 @@
+.rating {
+  display: flex;
+  align-items: center;
+
+  &__graph {
+    
+    margin-right: 4px;
+
+    svg {
+      margin-right: 4px;
+      width: 14px;
+      height: 14px;
+      fill: #F2D800;
+    }
+  }
+
+  &__num {
+    font-weight: bold;
+    font-size: 12px;
+    color: $text-gray;
+  }
+}

@@ -1,7 +1,44 @@
 boards: [
-  {},
-  {},
-  {}
+  {
+    title: "JR Surfboards The Donny Stoker Yellow/Green Rail Fade",
+    img: [
+      "ds--1.png",
+      "ds--2.png",
+      "ds--3.png",
+      "ds--4.png"
+    ],
+    ratingNum: "52",
+    description: "Easy to ride, care free surfing craft that's fun for everyone, paddles well, super fast down the line and great for any level of surfing depending on who rides it. The Donny Stoker, a rework on design from stokesys first ever pro model. A super easy to surf and fun board. The Donny Stoker is a board for total freesurfing expression.",
+    features: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem recusandae, omnis commodi officia? Tempore ipsa, qui consequatur vel modi esse ipsam minus quos amet officiis optio eligendi fuga voluptatem alias!",
+    dimensions: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel veniam doloremque dicta deserunt maiores labore. Illo voluptatum, numquam aspernatur tempore in dolores, quidem iusto quos, nulla expedita sapiente. Consectetur, odit!",
+    price: "$499.99"
+  },
+  {
+    title: "Title For Another Surfboard",
+    img: [
+      "grind--1.png",
+      "grind--2.png",
+      "grind--3.png"
+    ],
+    ratingNum: "73",
+    description: "Easy to ride, care free surfing craft that's fun for everyone, paddles well, super fast down the line and great for any level of surfing depending on who rides it. The Donny Stoker, a rework on design from stokesys first ever pro model. A super easy to surf and fun board. The Donny Stoker is a board for total freesurfing expression.",
+    features: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem recusandae, omnis commodi officia? Tempore ipsa, qui consequatur vel modi esse ipsam minus quos amet officiis optio eligendi fuga voluptatem alias!",
+    dimensions: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel veniam doloremque dicta deserunt maiores labore. Illo voluptatum, numquam aspernatur tempore in dolores, quidem iusto quos, nulla expedita sapiente. Consectetur, odit!",
+    price: "$599.99"
+  },
+  {
+    title: "One More Great Surfboard",
+    img: [
+      "torq1.png",
+      "torq2.png",
+      "torq3.png"
+    ],
+    ratingNum: "61",
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel veniam doloremque dicta deserunt maiores labore. Illo voluptatum, numquam aspernatur tempore in dolores, quidem iusto quos, nulla expedita sapiente. Consectetur, odit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel veniam doloremque dicta deserunt maiores labore. Illo voluptatum, numquam aspernatur tempore in dolores, quidem iusto quos, nulla expedita sapiente. Consectetur, odit!",
+    features: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem recusandae, omnis commodi officia? Tempore ipsa, qui consequatur vel modi esse ipsam minus quos amet officiis optio eligendi fuga voluptatem alias!",
+    dimensions: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel veniam doloremque dicta deserunt maiores labore. Illo voluptatum, numquam aspernatur tempore in dolores, quidem iusto quos, nulla expedita sapiente. Consectetur, odit!",
+    price: "$639.00"
+  }
 ]
 
 
