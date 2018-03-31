@@ -12,3 +12,15 @@ body {
   min-width: 320px;
   font-family: $font-family--montserrat;
 }
+
+.main {
+  transition: transform .35s;
+
+  &--transform {
+    transform: translateY(80px);
+
+    @media screen and (min-width: $screen-sm-min) {
+      transform: translateY(100px);
+    }
+  }
+}

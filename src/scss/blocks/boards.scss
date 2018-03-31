@@ -3,13 +3,23 @@
   width: calc(100% - 40px);
   max-width: 700px;
   margin: 0 auto;
-  margin-bottom: 110px;
+  // margin-bottom: 110px;
+  margin-bottom: 20px;
   box-shadow: 0px -8px 30px 0px rgba(0, 0, 0, 0.34);
   background: #fff;
+  transition: transform .35s;
+  transform: translateY(-100px);
 
   @media screen and (min-width: $screen-sm-min) {
     transform: translateY(-170px);
     margin-bottom: 5%;
+  }
+
+  &--transform {
+    transform: translateY(0px);
+    @media screen and (min-width: $screen-sm-min) {
+      transform: translateY(-70px);
+    }
   }
 
   @media screen and (min-width: $screen-lg-min) {

@@ -102,5 +102,26 @@ $('.board__images-preview').slick({
   ]
 });
 
+var toggler = document.getElementById('toggler');
+var mainNav = document.querySelector('.main-nav');
+var header = document.querySelector('.page-header');
+var main = document.querySelector('.main');
 
+function mainNavVisibleToggle(event) {
+  event.preventDefault();
+  toggler.classList.toggle('toggler--close');
+  mainNav.classList.toggle('main-nav--active');
+  header.classList.toggle('page-header--transform');
+  main.classList.toggle('main--transform');
+
+  if (toggler.classList.contains('toggler--close')) {
+    toggler.setAttribute('aria-pressed', 'true');
+  } else {
+    toggler.setAttribute('aria-pressed', 'false');
+  }
+}
+
+if (toggler) {
+  toggler.addEventListener('click', mainNavVisibleToggle);
+}
 
