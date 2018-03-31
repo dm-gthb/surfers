@@ -1,12 +1,16 @@
 .team {
 
-  margin-bottom: 50px;
+  margin-bottom: 65px;
 
   @media screen and (min-width: $screen-md-min) {
     margin-bottom: 80px;
   }
 
   @media screen and (min-width: $screen-lg-min) {
+    margin-bottom: 100px;
+  }
+
+  @media screen and (min-width: $screen-xlg-min) {
     margin-bottom: 120px;
   }
 
@@ -19,7 +23,12 @@
   }
 
   &__title-svg {
-    transform: translateY(28%);
+    margin-bottom: 5px;
+    
+    @media screen and (min-width: $screen-sm-min) {
+      transform: translateY(28%);
+      margin-bottom: 0;
+    }
   }
 
   &__slider{

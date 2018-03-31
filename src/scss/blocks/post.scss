@@ -5,8 +5,8 @@
     display: block;
     height: 100%;
     text-decoration: none;
-    padding-bottom: 25px;
-    padding-top: 25px;
+    padding-bottom: 20px;
+    padding-top: 20px;
     color: $text-gray;
     transition: all .15s;
 
@@ -25,16 +25,24 @@
     width: 100%;
     max-width: 270px;
     margin: 0 auto;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
+
+    @media screen and (min-width: $screen-md-min) {
+      margin-bottom: 25px;
+    }
   }
 
   &__text {
     margin: 0;
-    padding: 0 25px;
+    padding: 0;
     color: inherit;
     font-family: $font-family--raleway;
     font-size: 16px;
     line-height: 1.5;
+
+    @media screen and (min-width: $screen-md-min) {
+      padding: 0 25px;
+    }
   }
 }
 

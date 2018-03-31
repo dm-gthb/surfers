@@ -2,7 +2,6 @@
 
 import $ from 'jquery';
 import 'slick-carousel';
-// import Flickity from 'flickity';
 
 // var title = document.querySelector('.boards__title');
 // var boardSection = document.querySelector('.boards');
@@ -19,14 +18,14 @@ import 'slick-carousel';
 //     }
 // };
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     getBoardSectionHeight();
-// });
+document.addEventListener('DOMContentLoaded', () => {
+    getBoardSectionHeight();
+});
 
 
 $('.boards__slider-items').slick({
   dots: false,
-  infinite: false,
+  infinite: true,
   draggable: false,
   slidesToShow: 1,
   slidesToScroll: 1,
@@ -37,7 +36,7 @@ $('.boards__slider-items').slick({
 $('.team__slider-items').slick({
   mobileFirst: true,
   dots: false,
-  infinite: false,
+  infinite: true,
   slidesToShow: 1,
   slidesToScroll: 1,
   prevArrow: $('.team__slider-pointer--prev'),
