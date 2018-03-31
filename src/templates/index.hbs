@@ -114,14 +114,7 @@
 
             {{#each teamMembers}}
             <div class="team__slider-item">
-              <section class="person">
-                <a href="{{link}}" target="_blank" class="person__link">
-                  <img src="{{img}}" alt="" class="person__img">
-                  <h3 class="person__name">{{name}}</h3>
-                  <span class="person__username">{{username}}</span>
-                  <span class="person__location">{{location}}</span>
-                </a>
-              </section>
+              {{> person}}
             </div>
             {{/each}}
 
@@ -135,42 +128,11 @@
     <div class="posts__container">
       <h2 class="posts__title">Latest updates</h2>
       <div class="posts__list">
+        {{#each newsPosts}}
         <div class="posts__list-item">
-          <article class="post">
-            <a href="#" class="post__link">
-              <img src="img/post--1.jpg" alt="" class="post__img">
-              <p class="post__text">Ellie Turner and Jobe Harris have taken out the 2016 British National Surf Championships</p>
-            </a>
-          </article>
+            {{> newsPost}}
         </div>
-
-        <div class="posts__list-item">
-          <article class="post">
-            <a href="#" class="post__link">
-              <img src="img/post--2.jpg" alt="" class="post__img">
-              <p class="post__text">A large group of surfers invaded the coast of La Jolla Shores, in California, with a single goal in mind</p>
-            </a>
-          </article>
-        </div>
-
-        <div class="posts__list-item">
-          <article class="post">
-            <a href="#" class="post__link">
-              <img src="img/post--3.jpg" alt="" class="post__img">
-              <p class="post__text">Surfboards are constantly evolving, and there are multiple board designs for a broad range of environments</p>
-            </a>
-          </article>
-        </div>
-
-<!--         <div class="posts__list-item">
-          <article class="post">
-            <a href="#" class="post__link">
-              <img src="http://placehold.it/540X400" alt="" class="post__img">
-              <p class="post__text">Surfboards are constantly evolving, and there are multiple board designs for a broad range of environments</p>
-            </a>
-          </article>
-        </div> -->
-
+        {{/each}}
       </div>
 
       <div class="posts__btn">

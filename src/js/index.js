@@ -18,9 +18,9 @@ import 'slick-carousel';
 //     }
 // };
 
-document.addEventListener('DOMContentLoaded', () => {
-    getBoardSectionHeight();
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//     getBoardSectionHeight();
+// });
 
 var $status = $('.boards__slider-counter');
 var $slickElement = $('.boards__slider-items');
@@ -44,7 +44,7 @@ $slickElement.slick({
 $('.team__slider-items').slick({
   mobileFirst: true,
   dots: false,
-  infinite: true,
+  infinite: false,
   slidesToShow: 1,
   slidesToScroll: 1,
   prevArrow: $('.team__slider-pointer--prev'),

@@ -14,20 +14,7 @@ boards: [
     price: "$499.99"
   },
   {
-    title: "Title For Another Surfboard",
-    img: [
-      "grind--1.png",
-      "grind--2.png",
-      "grind--3.png"
-    ],
-    ratingNum: "73",
-    description: "Easy to ride, care free surfing craft that's fun for everyone, paddles well, super fast down the line and great for any level of surfing depending on who rides it. The Donny Stoker, a rework on design from stokesys first ever pro model. A super easy to surf and fun board. The Donny Stoker is a board for total freesurfing expression.",
-    features: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem recusandae, omnis commodi officia? Tempore ipsa, qui consequatur vel modi esse ipsam minus quos amet officiis optio eligendi fuga voluptatem alias!",
-    dimensions: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel veniam doloremque dicta deserunt maiores labore. Illo voluptatum, numquam aspernatur tempore in dolores, quidem iusto quos, nulla expedita sapiente. Consectetur, odit!",
-    price: "$599.99"
-  },
-  {
-    title: "One More Great Surfboard",
+    title: "Title for Another Surfboard",
     img: [
       "torq1.png",
       "torq2.png",
@@ -38,65 +25,109 @@ boards: [
     features: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem recusandae, omnis commodi officia? Tempore ipsa, qui consequatur vel modi esse ipsam minus quos amet officiis optio eligendi fuga voluptatem alias!",
     dimensions: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel veniam doloremque dicta deserunt maiores labore. Illo voluptatum, numquam aspernatur tempore in dolores, quidem iusto quos, nulla expedita sapiente. Consectetur, odit!",
     price: "$639.00"
+  },
+  {
+    title: "One More Great Surfboard",
+    img: [
+      "grind--1.png",
+      "grind--2.png",
+      "grind--3.png"
+    ],
+    ratingNum: "73",
+    description: "Easy to ride, care free surfing craft that's fun for everyone, paddles well, super fast down the line and great for any level of surfing depending on who rides it. The Donny Stoker, a rework on design from stokesys first ever pro model. A super easy to surf and fun board. The Donny Stoker is a board for total freesurfing expression.",
+    features: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem recusandae, omnis commodi officia? Tempore ipsa, qui consequatur vel modi esse ipsam minus quos amet officiis optio eligendi fuga voluptatem alias!",
+    dimensions: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel veniam doloremque dicta deserunt maiores labore. Illo voluptatum, numquam aspernatur tempore in dolores, quidem iusto quos, nulla expedita sapiente. Consectetur, odit!",
+    price: "$599.99"
   }
 ]
 
 
 teamMembers: [
   {
-    link: "#",
-    img: "img/tim--taj2x.jpg",
     name: "Taj Burrow",
+    img1x: "team--taj.jpg",
+    img2x: "team--taj@2x.jpg",
     username: "@tajamo",
-    location: "Yallingup, Australia"
+    location: "Yallingup, Australia",
+    link: "#"
   },
   {
-    link: "#",
-    img: "img/tim--taj2x.jpg",
     name: "Malia Manuel",
+    img1x: "team--manuel.jpg",
+    img2x: "team--manuel@2x.jpg",
     username: "@maliamanuel",
-    location: "Wailua, Hi"
+    location: "Wailua, Hi",
+    link: "#"
   },
   {
-    link: "#",
-    img: "img/tim--taj2x.jpg",
     name: "Ian Walsh",
+    img1x: "team--walsh.jpg",
+    img2x: "team--walsh@2x.jpg",
     username: "@ian.walsh",
-    location: "Maui, Hi"
+    location: "Maui, Hi",
+    link: "#"
   },
   {
-    link: "#",
-    img: "img/tim--taj2x.jpg",
     name: "Macy Callaghan",
+    img1x: "team--callaghan.jpg",
+    img2x: "team--callaghan@2x.jpg",
     username: "@macyjanecallaghan",
-    location: "San Clemente, CA"
+    location: "San Clemente, CA",
+    link: "#"
   },
   {
-    link: "#",
-    img: "img/tim--taj2x.jpg",
     name: "Taj Burrow",
+    img1x: "team--taj.jpg",
+    img2x: "team--taj@2x.jpg",
     username: "@tajamo",
-    location: "Yallingup, Australia"
+    location: "Yallingup, Australia",
+    link: "#"
   },
   {
-    link: "#",
-    img: "img/tim--taj2x.jpg",
     name: "Malia Manuel",
+    img1x: "team--manuel.jpg",
+    img2x: "team--manuel@2x.jpg",
     username: "@maliamanuel",
-    location: "Wailua, Hi"
+    location: "Wailua, Hi",
+    link: "#"
   },
   {
-    link: "#",
-    img: "img/tim--taj2x.jpg",
     name: "Ian Walsh",
+    img1x: "team--walsh.jpg",
+    img2x: "team--walsh@2x.jpg",
     username: "@ian.walsh",
-    location: "Maui, Hi"
+    location: "Maui, Hi",
+    link: "#"
   },
   {
-    link: "#",
-    img: "img/tim--taj2x.jpg",
     name: "Macy Callaghan",
+    img1x: "team--callaghan.jpg",
+    img2x: "team--callaghan@2x.jpg",
     username: "@macyjanecallaghan",
-    location: "San Clemente, CA"
+    location: "San Clemente, CA",
+    link: "#"
   }
 ]
+
+newsPosts: [
+  {
+    img1x: "news1.jpg",
+    img2x: "news1@2x.jpg",
+    text: "Ellie Turner and Jobe Harris have taken out the 2016 British National Surf Championships",
+    link: "#"
+  },
+  {
+    img1x: "news2.jpg",
+    img2x: "news2@2x.jpg",
+    text: "A large group of surfers invaded the coast of La Jolla Shores, in California, with a single goal in mind",
+    link: "#"
+  },
+  {
+    img1x: "news3.jpg",
+    img2x: "news3@2x.jpg",
+    text: "Surfboards are constantly evolving, and there are multiple board designs for a broad range of environments",
+    link: "#"
+  }
+]
+
+

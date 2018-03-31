@@ -7,7 +7,11 @@
   background-size: cover;
   // border: 1px solid green;
 
-  @media screen and (min-width: $screen-md-min) {
+  @media screen and (min-width: $screen-sm-min) {
+    padding-bottom: 250px;
+  }
+
+  @media screen and (min-width: $screen-lg-min) {
     padding-bottom: 390px;
   }
 
@@ -21,6 +25,10 @@
     margin-bottom: 25px;
 
     @media screen and (min-width: $screen-md-min) {
+      margin-bottom: 40px;
+    }
+
+    @media screen and (min-width: $screen-lg-min) {
       margin-bottom: 130px;
     }
   }
@@ -33,7 +41,7 @@
   &__nav {
     display: none;
 
-    @media screen and (min-width: $screen-md-min) {
+    @media screen and (min-width: $screen-lg-min) {
       display: block;
       margin-left: auto;
       margin-right: auto;
@@ -43,7 +51,7 @@
   &__social {
     display: none;
 
-    @media screen and (min-width: $screen-md-min) {
+    @media screen and (min-width: $screen-lg-min) {
       display: block;
       margin-left: 15px;
     }
@@ -63,6 +71,10 @@
     color: $text-black;
 
     @media screen and (min-width: $screen-md-min) {
+      font-size: 48px;
+    }
+
+    @media screen and (min-width: $screen-lg-min) {
       font-size: 50px;
     }
   }

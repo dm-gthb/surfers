@@ -50,7 +50,7 @@
     max-width: 80%;
     margin: 0 auto;
 
-    @media screen and (min-width: $screen-md-min) {
+    @media screen and (min-width: $screen-lg-min) {
       max-width: 100%;
     }
   }
@@ -142,10 +142,16 @@
 
     @media screen and (min-width: $screen-md-min) {
       padding: 45px 55px;
+
     }
 
     @media screen and (min-width: $screen-lg-min) {
       width: 50%;
+      padding-bottom: 0;
+    }
+
+    @media screen and (min-width: $screen-xlg-min) {
+      padding-bottom: 45px;
     }
   }
 
@@ -234,7 +240,7 @@
     line-height: 1.5;
     color: $text-gray;
 
-    @media screen and (min-width: $screen-md-min) {
+    @media screen and (min-width: $screen-lg-min) {
       margin-bottom: 60px;
     }
 
@@ -248,7 +254,7 @@
     align-items: center;
     margin-bottom: 30px;
 
-    @media screen and (min-width: $screen-md-min) {
+    @media screen and (min-width: $screen-lg-min) {
       margin-bottom: 80px;
     }
   }
