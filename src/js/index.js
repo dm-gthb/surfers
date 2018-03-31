@@ -22,8 +22,16 @@ document.addEventListener('DOMContentLoaded', () => {
     getBoardSectionHeight();
 });
 
+var $status = $('.boards__slider-counter');
+var $slickElement = $('.boards__slider-items');
 
-$('.boards__slider-items').slick({
+$slickElement.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+    //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+    var i = (currentSlide ? currentSlide : 0) + 1;
+    $status.text(i + '/' + slick.slideCount);
+});
+
+$slickElement.slick({
   dots: false,
   infinite: true,
   draggable: false,
@@ -93,4 +101,6 @@ $('.board__images-preview').slick({
     }
   ]
 });
+
+
 
