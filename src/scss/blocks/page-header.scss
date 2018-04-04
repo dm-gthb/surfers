@@ -1,7 +1,7 @@
 .page-header {
   position: relative;
   padding-top: 32px;
-  padding-bottom: 140px;
+  padding-bottom: 200px;
   background: url(../img/bg-header.jpg);
   background-repeat: no-repeat;
   background-position: top center;
@@ -49,15 +49,11 @@
 
   &__social {
     position: absolute;
-    bottom: 50px;
+    top: 0;
     left: 50%;
-    transform: translate(-50%, -100px);
+    transform: translate(-50%, 0px);
     opacity: 0;
     transition: all .35s;
-
-    @media screen and (min-width: $screen-sm-min) {
-      bottom: 120px;
-    }
 
     @media screen and (min-width: $screen-lg-min) {
       position: static;
@@ -81,6 +77,13 @@
     font-style: italic;
     font-weight: 400;
     transition: all .35s;
+    opacity: 1;
+    transform: translateY(0px);
+
+    &--transformed {
+      transform: translateY(300px);
+      opacity: 0;
+    }
   }
 
   &__promo-title {
@@ -106,17 +109,6 @@
 
     @media screen and (min-width: $screen-md-min) {
       font-size: 24px;
-    }
-  }
-
-  &--transform {
-    .page-header__promo {
-      transform: translateY(300px);
-      opacity: 0;
-    }
-    .page-header__social {
-      transform: translate(-50%, 0);
-      opacity: 1;
     }
   }
 }

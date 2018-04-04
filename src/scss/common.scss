@@ -14,13 +14,5 @@ body {
 }
 
 .main {
-  transition: transform .35s;
-
-  &--transform {
-    transform: translateY(80px);
-
-    @media screen and (min-width: $screen-sm-min) {
-      transform: translateY(100px);
-    }
-  }
+  transition: transform .3s;
 }
