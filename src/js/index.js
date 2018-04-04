@@ -126,10 +126,8 @@ function mainNavVisibleToggle(event) {
     main.style.transform = mainTranslateStringValue;
     headerSocial.style.transform = socialTranslateStringValue;
     headerSocial.style.opacity = '1';
-    console.log(mainTranslateStringValue);
   } else {
     toggler.setAttribute('aria-pressed', 'false');
-    console.log(mainNavHeight);
     main.style.transform = 'translateY(0px)';
     headerSocial.style.transform = 'translate(-50%, 0px)';
     headerSocial.style.opacity = '0';
